@@ -1,5 +1,6 @@
 # 0.1.0
 import time
+import requests
 from .colors import *
 from .colors import colorprint as print
 from .prompt import prompt
@@ -34,7 +35,11 @@ class Assistant:
                     max_workers=int(datamax_workers)
                 )
             elif appChoice == "ask":
-                pass
+                question = prompt("What would you like to know? ")
+                res = requests.get(f"http://api.wolframalpha.com/v1/result?appid={self.wolframApiKey}&i={question}")
+                print(white, "\n")
+                print(white, res.text)
+                
             elif appChoice == "trivia":
                 pass
             else:

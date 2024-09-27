@@ -1,4 +1,4 @@
 import clios
-
-assistant = clios.Assistant()
+import os
+assistant = clios.Assistant(wolframApiKey=os.loadenv("CLIOS_WOLFRAM_KEY"))
 assistant.start()
