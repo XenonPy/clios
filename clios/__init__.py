@@ -16,9 +16,7 @@ class Assistant:
             print(red, " > Clios Assistant v0.1.0", bold)
             appChoice = prompt("""
             What would you like to do?
-                   Do Math (math)
                    Ask AI (ask)
-                   Random Trivia (trivia)
                    Generate Data (data)
             """)
             if appChoice == "data":
